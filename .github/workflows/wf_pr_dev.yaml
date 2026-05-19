@@ -1,0 +1,9 @@
+name: wf_dev_pr
+on:
+ pull_request:
+  branches:
+   -develop
+jobs:
+  pr_dev_job:
+   runs-on: ubuntu-latest
+      
