@@ -6,4 +6,17 @@ on:
 jobs:
   pr_dev_job:
    runs-on: ubuntu-latest
-      
+   steps:
+   -name: welcome steps
+    run: echo "This is Step 2 of  job 1"
+   -name: job 1 Second step
+    run: echo "This is Step 2 of job 1"
+  Second_job:
+   runs-on:ubuntu-latest
+   steps"
+    -name: Clone Repo
+     uses: actions/checkout@v6.0.2    
+    -name: git and Node branch
+     run: |
+      git @version
+      node --version
