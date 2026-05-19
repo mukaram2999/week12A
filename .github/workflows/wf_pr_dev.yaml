@@ -1,22 +1,29 @@
 name: wf_dev_pr
+
 on:
- pull_request:
-  branches:
-   -develop
+  pull_request:
+    branches:
+      - develop
+
 jobs:
   pr_dev_job:
-   runs-on: ubuntu-latest
-   steps:
-   -name: welcome steps
-    run: echo "This is Step 2 of  job 1"
-   -name: job 1 Second step
-    run: echo "This is Step 2 of job 1"
-  Second_job:
-   runs-on:ubuntu-latest
-   steps"
-    -name: Clone Repo
-     uses: actions/checkout@v6.0.2    
-    -name: git and Node branch
-     run: |
-      git @version
-      node --version
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Welcome step
+        run: echo "This is Step 1 of job 1"
+
+      - name: Job 1 Second step
+        run: echo "This is Step 2 of job 1"
+
+  second_job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone Repo
+        uses: actions/checkout@v4
+
+      - name: Git and Node version
+        run: |
+          git --version
+          node --version
